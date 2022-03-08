@@ -1,0 +1,28 @@
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+	<script src="https://kit.fontawesome.com/0f9d19b412.js" crossorigin="anonymous"></script>
+	<title>Kirizaku</title>
+	<link href="Kirizaku/styles.css" rel="stylesheet">
+	</head> 
+<body>
+	<video id="video" src="Kirizaku/BackgroundVideo.mp4" muted autoplay="" loop=""></video>
+	<input id="volume" type="image" src="Kirizaku/volume-up-solid.svg"/>
+	<div class="main">
+		<div class="nickname">Kirizaku</div>
+		<p style="font-size: 20px; font-family: 'Roboto', sans-serif; margin-top: 15px; margin-bottom: 35px;">Game programmer, Speedrunner</p>
+		<div class="media"> 
+			<a href="https://vk.com/kirizaku" target="_blank"><i class="fab fa-vk"></i></a> 
+			<a href="http://steamcommunity.com/id/Kirizaku" target="_blank"><i class="fab fa-steam-symbol"></i></a>
+			<a href="https://www.speedrun.com/user/Kirizaku" target="_blank"><i class="fas fa-trophy"></i></a> 
+		</div> 
+	</div>
+	<script>
+		var video = document.getElementById("video");
+		var volume = document.getElementById("volume");
+		volume.addEventListener('click', function() {
+			video.muted = (video.muted == false) ? true : false;
+		});
+	</script> 
+</body>
+</html>
