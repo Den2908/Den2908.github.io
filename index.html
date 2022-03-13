@@ -23,6 +23,10 @@
 		volume.addEventListener('click', function() {
 			video.muted = (video.muted == false) ? true : false;
 		});
+		
+		document.addEventListener('DOMContentLoaded', ()=>{
+		video.volume = 0.3
+		});
 	</script> 
 </body>
 </html>
