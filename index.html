@@ -6,11 +6,16 @@
 	<link href="Kirizaku/styles.css" rel="stylesheet">
 	</head> 
 <body>
-	<video id="video" src="Kirizaku/BackgroundVideo.mp4" muted autoplay="" loop=""></video>
-	<input id="volume" type="image" src="Kirizaku/volume-up-solid.svg"/>
+	<video id="video" autoplay muted loop>
+	<source src="Kirizaku/BackgroundVideo.mp4" type="video/mp4">
+	</video>
+	<a id="volume" target="_blank"><i id="icon_play" class="fas fa-volume-up"></i></a>
+	<audio class="music" preload="auto" loop="loop">
+	<source src="Kirizaku/music.mp3" controls="" autobuffer="" />
+	</audio>
 	<div class="main">
 		<div class="nickname">Kirizaku</div>
-		<p style="font-size: 20px; font-family: 'Roboto', sans-serif; margin-top: 15px; margin-bottom: 35px;">Game programmer, Speedrunner</p>
+		<p style="font-size: 20px; font-family: 'Roboto', sans-serif; margin-top: 15px; margin-bottom: 35px;">System administrator, Game programmer, Speedrunner</p>
 		<div class="media"> 
 			<a href="https://vk.com/kirizaku" target="_blank"><i class="fab fa-vk"></i></a> 
 			<a href="http://steamcommunity.com/id/Kirizaku" target="_blank"><i class="fab fa-steam-symbol"></i></a>
@@ -18,15 +23,23 @@
 		</div> 
 	</div>
 	<script>
-		var video = document.getElementById("video");
-		var volume = document.getElementById("volume");
-		volume.addEventListener('click', function() {
-			video.muted = (video.muted == false) ? true : false;
-		});
-		
-		document.addEventListener('DOMContentLoaded', ()=>{
-		video.volume = 0.3
-		});
-	</script> 
+		const button = document.querySelector('#volume'),
+              icon = document.querySelector('#icon_play'),
+			  audio = document.querySelector('.music')
+			  
+		button.addEventListener('click', () => {
+			const isPlay = button.classList.contains('play')
+			if (isPlay) {
+				button.classList.remove('play')	
+				icon.className = "fas fa-volume-up";
+				audio.pause()
+			} else {
+				button.classList.add('play')
+				icon.className = "fas fa-pause";
+				audio.play()
+			}
+		})
+	</script>
+	
 </body>
 </html>
